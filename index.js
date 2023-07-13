@@ -11,13 +11,13 @@ const input = document.querySelector(".input");
 const dynamic = document.querySelector(".dynamic");
 const getWeatherData = (city) => __awaiter(this, void 0, void 0, function* () {
     const apiKey = "2f4228dd423c4eb4ab621036230907";
-    const response = yield fetch(`http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`);
+    const response = yield fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`);
     const data = yield response.json();
     return data;
 });
 const getGiphyData = (search, weirdness) => __awaiter(this, void 0, void 0, function* () {
     const apiKey = "k5mLKfYOKatUdgmbQ1u0JEGb79U5KFQu";
-    const response = yield fetch(`http://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${search}&weirdness=${weirdness}`);
+    const response = yield fetch(`https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${search}&weirdness=${weirdness}`);
     const data = yield response.json();
     console.log(search, weirdness);
     return data;
@@ -43,6 +43,7 @@ const drawGiphyStuff = (data) => {
     dynamic.innerHTML += `
     <div class="text-xl mt-4">
       <img src="${url}" alt="${title}">
+      <div class="text-sm mt-1 flex justify-center">Powered By GIPHY</div>
     </div>
   `;
 };

@@ -4,7 +4,7 @@ const dynamic = document.querySelector(".dynamic");
 const getWeatherData = async (city: string) => {
   const apiKey = "2f4228dd423c4eb4ab621036230907";
   const response = await fetch(
-    `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
+    `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${city}`
   );
   const data = await response.json();
   return data;
@@ -13,7 +13,7 @@ const getWeatherData = async (city: string) => {
 const getGiphyData = async (search: string, weirdness: number) => {
   const apiKey = "k5mLKfYOKatUdgmbQ1u0JEGb79U5KFQu";
   const response = await fetch(
-    `http://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${search}&weirdness=${weirdness}`
+    `https://api.giphy.com/v1/gifs/translate?api_key=${apiKey}&s=${search}&weirdness=${weirdness}`
   );
   const data = await response.json();
   console.log(search, weirdness);
@@ -44,6 +44,7 @@ const drawGiphyStuff = (data) => {
   dynamic.innerHTML += `
     <div class="text-xl mt-4">
       <img src="${url}" alt="${title}">
+      <div class="text-sm mt-1 flex justify-center">Powered By GIPHY</div>
     </div>
   `;
 };

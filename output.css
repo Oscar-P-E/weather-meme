@@ -515,6 +515,15 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mr-auto {
+  margin-right: auto;
+}
+.ml-auto {
+  margin-left: auto;
+}
 .flex {
   display: flex;
 }
@@ -548,6 +557,9 @@ video {
 }
 .items-center {
   align-items: center;
+}
+.justify-end {
+  justify-content: flex-end;
 }
 .justify-center {
   justify-content: center;
@@ -662,6 +674,10 @@ video {
 .text-7xl {
   font-size: 4.5rem;
   line-height: 1;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .font-bold {
   font-weight: 700;
